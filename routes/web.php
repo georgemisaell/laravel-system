@@ -9,11 +9,13 @@ Route::get('/', function () {
 
 Route::get('/posts', function () {
     $posts = Post::all();
+
     return view('posts', ['title' => 'Blog Page', 'posts' => $posts]);
 });
-Route::get('/posts/{id}', function () {
-    return view('posts', ['title' => 'Blog Page']);
-})->name('post.id');
+
+Route::get('/posts/{post:slug}', function (Post $post) {
+    return view('post', ['title' => 'Blog Page', 'post' => $post]);
+});
 
 Route::get('/about', function () {
     return view('about', ['title' => 'About Page']);
