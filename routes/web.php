@@ -18,8 +18,8 @@ Route::get('/posts/{post:slug}', function (Post $post) {
     return view('post', ['title' => 'Blog Page', 'post' => $post]);
 });
 
-Route::get('/author/{user}', function (User $user) {
-    return view('posts', ['title' => 'Article By '. $user->name , 'posts' => $user->posts]);
+Route::get('/author/{user:username}', function (User $user) {
+    return view('posts', ['title' => count($user->posts). ' Article By '. $user->name , 'posts' => $user->posts]);
 });
 
 Route::get('/about', function () {
