@@ -1,14 +1,5 @@
 <x-layout :title="$title">
 
-  {{-- <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 mb-6">
-      <div class="p-6">
-          <h2 class="text-2xl font-semibold text-blue-700 mb-2">{{ $post->title }}</h2>
-          <p class="text-sm text-gray-600 mb-4">Oleh <a href="/author/{{ $post->author->username }}">{{ $post->author->name }}</a></span></p>
-          <p class="text-gray-700 leading-relaxed mb-4">{{ $post->body }}</p>
-          <a href="/posts" class="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors duration-300">Baca Selengkapnya</a>
-      </div>
-  </div> --}}
-
 <main class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900 antialiased">
   <div class="flex justify-between px-4 mx-auto max-w-screen-xl ">
       <article class="mx-auto w-full max-w-4xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">

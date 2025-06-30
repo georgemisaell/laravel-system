@@ -11,9 +11,13 @@ Route::get('/', function () {
 
 Route::get('/posts', function () {
     // $posts = $user->posts->load('category', 'author');
-    $posts = Post::latest()->get();
+    $posts = Post::latest();
 
-    return view('posts', ['title' => 'Blog Page', 'posts' => $posts]);
+    if(request('search')){
+        $posts->where('title', 'like', '%' . request('search') . '%');
+    }
+
+    return view('posts', ['title' => 'Blog Page', 'posts' => $posts->get()]);
 });
 
 Route::get('/posts/{post:slug}', function (Post $post) {
